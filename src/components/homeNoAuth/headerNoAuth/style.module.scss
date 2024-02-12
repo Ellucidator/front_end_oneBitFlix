@@ -35,3 +35,28 @@
         background-color: transparent;
     }
 }
+
+@media(max-width:454px){
+    .nav{
+        justify-content: center;
+    }
+
+    .navBtn{
+        margin: 16px 10px;
+        border-color: white;
+        font-size: 14px;
+    }
+
+    .ctaSection{
+        gap: 10px;
+    }
+}
+
+@media(max-width:359px){
+    .ctaSection{
+        text-align: center;
+    }
+    .imgCta{
+        margin: 0px 8px;
+    }
+}
