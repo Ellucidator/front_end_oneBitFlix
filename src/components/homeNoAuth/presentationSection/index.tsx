@@ -13,7 +13,7 @@ const PresentationSection= function (){
                             Tenha acesso aos melhores <br/> tutoriais de Programação
                         </p>
                         <p className={styles.description}>
-                            Estude de onde estiver, a qualquer momento, e continue <br/> evoluindo como programador
+                            Estude de onde estiver, a qualquer momento, e continue evoluindo como programador
                         </p>
                         <Link href="/register">
                             <button type="button" className={`btn btn-outline-secondary ${styles.btnCta}`}>
