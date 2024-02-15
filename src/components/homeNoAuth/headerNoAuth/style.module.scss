@@ -1,39 +1,27 @@
 @import"../../../style/colors.module.scss";
 
-.ctaSection{
-    background-color: $lightRed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 30px;
-}
-
-.imgCta{
-    width: 20px;
-}
 
 .nav{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
-
+    padding-top: 40px;
 }
 
 .imgLogoNav{
-    width: 180px;
+    width: 200px;
 }
 
 .navBtn{
     margin: 0 5px;
     border-color: transparent;
+    font-weight: bold;
     color: $lightGray;
     transition: 0.5s;
     &:hover{
-        border-color: $lightRed;
         color: white;
-        background-color: transparent;
+        background-color: $lightRed;
+        border-color: $darkRed;
     }
 }
 

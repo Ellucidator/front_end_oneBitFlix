@@ -12,8 +12,10 @@ const HomeNoAuth = () =>{
         <link rel="icon" href="./icon.ico" />
       </Head>
       <main>
-        <HeaderNoAuth/>
-        <PresentationSection/>
+        <div className={styles.sectionBg}>
+          <HeaderNoAuth/>
+          <PresentationSection/>
+        </div>
       </main>
     </>
   );

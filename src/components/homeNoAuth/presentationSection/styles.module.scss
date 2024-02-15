@@ -1,51 +1,81 @@
 @import '../../../style/colors.module.scss';
 
-.imgPresentation{
+.imgPresentation {
     width: 550px;
 }
 
-.subTitle{
+.subTitle {
     font-size: 18px;
     font-weight: bold;
     color: $lightRed;
 }
 
-.title{
-    font-size:  45px;
+.title {
+    font-size: 45px;
     font-weight: bold;
     line-height: 50px;
 }
 
-.description{
+.description {
     font-size: 20px;
     color: $lightGray;
     line-height: 30px;
     margin: 20px 20px 40px 0px;
 }
 
-.btnCta{
+.btnCta {
     font-weight: bold;
-    color: white;
+    color: $lightGray;
 
     display: flex;
     align-items: center;
     gap: 25px;
 
-    padding: 14px 30px ;
-    border: 2px solid $lightRed;
-    border-radius: 20px;
+    padding: 14px 30px;
+    border: 2px solid $darkRed;
+    border-radius: 10px;
 
-    .btnImg{
+    transition: 0.5s;
+
+    .btnImg {
         width: 11px;
     }
 
-    &:hover{
+    &:hover {
         border-color: $darkRed;
-        color: $lightGray;
-        background-color: transparent;
+        color: white;
+        background-color: $lightRed;
+        font-size: 17px;
+
+        .btnImg {
+            filter: brightness(0) invert(1);
+        }
+
     }
 }
 
-.arrowDown{
+.arrowDown {
     width: 40px;
+    animation: balanco 2s infinite linear;
+    transition: 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        animation-play-state: paused;
+        width: 45px;
+    }
+}
+
+@keyframes balanco {
+
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+
 }
