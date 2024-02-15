@@ -5,9 +5,9 @@ import { Container, Row, Col } from "reactstrap"
 const PresentationSection= function (){
     return (
         <>
-            <Container>
+            <Container className="py-4 mt-5">
                 <Row>
-                    <Col md>
+                    <Col md className="d-flex flex-column justify-content-center">
                         <p className={styles.subTitle}>ACESSO ILIMITADO</p>
                         <p className={styles.title}>
                             Tenha acesso aos melhores <br/> tutoriais de Programação
@@ -23,6 +23,11 @@ const PresentationSection= function (){
                     </Col>
                     <Col md>
                         <img src="/homeNoAuth/imgPresentation.png" alt="imgIndex" className={styles.imgPresentation} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="d-flex justify-content-center pt-5">
+                        <img src="/homeNoAuth/iconArrowDown.svg" alt="arrowDown" className={styles.arrowDown}/>
                     </Col>
                 </Row>
             </Container>
