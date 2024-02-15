@@ -1,0 +1,25 @@
+@import '../../../style/colors.module.scss';
+
+.imgPresentation{
+    width: 550px;
+}
+
+.subTitle{
+    font-size: 18px;
+    font-weight: bold;
+    color: $lightRed;
+}
+
+.title{
+    font-size:  45px;
+    font-weight: bold;
+    line-height: 50px;
+    margin: 0px 20px 40px 0px;
+}
+
+.description{
+    font-size: 20px;
+    color: $lightGray;
+    line-height: 30px;
+    margin: 20px 20px 40px 0px;
+}
