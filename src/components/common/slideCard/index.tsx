@@ -1,4 +1,5 @@
-import style from "./style.module.scss"
+import style from "./style.module.scss";
+
 
 const SlideCard = function(){
     return(
