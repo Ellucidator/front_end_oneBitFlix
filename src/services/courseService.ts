@@ -27,3 +27,5 @@ const courseServices = {
         return res
     }
 }
+
+export default courseServices

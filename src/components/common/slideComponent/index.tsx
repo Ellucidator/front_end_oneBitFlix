@@ -3,8 +3,12 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
 import SlideCard from '../slideCard';
+import { CourseType } from '../../../services/courseService';
 
-const SlideComponent = function(){
+interface props {
+    course: CourseType[]
+}
+const SlideComponent = function({course}:props){
     return(
         <>
             <div>
@@ -14,9 +18,11 @@ const SlideComponent = function(){
                     perMove:1,
                     pagination:false,
                 }}>
-                    <SplideSlide>
-                        <SlideCard/>
-                    </SplideSlide>
+                    {course?.map((course)=>(
+                        <SplideSlide key={course.id}>
+                            <SlideCard course={course}/>
+                        </SplideSlide>
+                    ))}
                 </Splide>
             </div>
         </>

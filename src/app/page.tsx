@@ -4,8 +4,10 @@ import HeaderNoAuth from "@/components/homeNoAuth/headerNoAuth";
 import PresentationSection from "@/components/homeNoAuth/presentationSection";
 import CardSection from "@/components/homeNoAuth/cardSection";
 import SlideComponent from "@/components/common/slideComponent";
-const HomeNoAuth = () =>{
+import courseServices from "@/services/courseService";
+const HomeNoAuth = async () =>{
 
+  const courses = await courseServices.getNewestCourses();
   return (
     <>
       <Head>
@@ -18,7 +20,7 @@ const HomeNoAuth = () =>{
           <HeaderNoAuth/>
           <PresentationSection/>
           <CardSection/>
-          <SlideComponent/>
+          <SlideComponent course={courses}/>
         </div>
       </main>
     </>
