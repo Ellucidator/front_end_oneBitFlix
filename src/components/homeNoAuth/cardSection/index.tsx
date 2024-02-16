@@ -8,7 +8,7 @@ const CardSection = function () {
             <p className={style.sectionTitle}>
                 O QUE VOCÊ VAI ACESSAR
             </p>
-            <Container>
+            <Container className="d-flex flex-wrap justify-content-center pt-5 gap-5">
                 <div className={style.card1}>
                     <p className={style.cardTitle}>
                         FRONT-END
