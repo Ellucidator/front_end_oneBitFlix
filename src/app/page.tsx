@@ -5,14 +5,13 @@ import PresentationSection from "@/components/homeNoAuth/presentationSection";
 import CardSection from "@/components/homeNoAuth/cardSection";
 import SlideSection from "../components/homeNoAuth/slideSection/index";
 
-
 const getNewestCourses = async ()=>{
   const res = await fetch("http://localhost:3000/courses/newest");
   const data = res.json()
   return data
 }
 const HomeNoAuth = async () =>{
-  const courses = await getNewestCourses().then(data=>console.log(data))
+  const courses = await getNewestCourses()
 
   
   return (
