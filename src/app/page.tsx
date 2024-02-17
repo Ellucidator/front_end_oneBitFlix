@@ -3,11 +3,18 @@ import styles from "./page.module.scss";
 import HeaderNoAuth from "@/components/homeNoAuth/headerNoAuth";
 import PresentationSection from "@/components/homeNoAuth/presentationSection";
 import CardSection from "@/components/homeNoAuth/cardSection";
-import SlideComponent from "@/components/common/slideComponent";
-import courseServices from "@/services/courseService";
-const HomeNoAuth = async () =>{
+import SlideSection from "../components/homeNoAuth/slideSection/index";
 
-  const courses = await courseServices.getNewestCourses();
+
+const getNewestCourses = async ()=>{
+  const res = await fetch("http://localhost:3000/courses/newest");
+  const data = res.json()
+  return data
+}
+const HomeNoAuth = async () =>{
+  const courses = await getNewestCourses().then(data=>console.log(data))
+
+  
   return (
     <>
       <Head>
@@ -19,12 +26,13 @@ const HomeNoAuth = async () =>{
         <div className={styles.sectionBg}>
           <HeaderNoAuth/>
           <PresentationSection/>
-          <CardSection/>
-          <SlideComponent course={courses}/>
         </div>
+        <CardSection/>
+        <SlideSection newestCourses={courses}/>
       </main>
     </>
   );
-}
+};
+
 
 export default HomeNoAuth

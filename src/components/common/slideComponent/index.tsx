@@ -6,9 +6,9 @@ import SlideCard from '../slideCard';
 import { CourseType } from '../../../services/courseService';
 
 interface props {
-    course: CourseType[]
+    courses: CourseType[]
 }
-const SlideComponent = function({course}:props){
+const SlideComponent = function({courses}:props){
     return(
         <>
             <div>
@@ -18,7 +18,7 @@ const SlideComponent = function({course}:props){
                     perMove:1,
                     pagination:false,
                 }}>
-                    {course?.map((course)=>(
+                    {courses?.map((course)=>(
                         <SplideSlide key={course.id}>
                             <SlideCard course={course}/>
                         </SplideSlide>
