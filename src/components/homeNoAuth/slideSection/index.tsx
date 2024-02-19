@@ -1,13 +1,13 @@
-import { CourseType } from "@/services/courseService"
 import styles from "./style.module.scss"
 import { Container } from "reactstrap";
 import SlideComponent from "@/components/common/slideComponent";
+import { CourseType } from "@/types/courseTypes";
+import Link from "next/link";
 
-interface props {
+interface props{
     newestCourses: CourseType[]
 }
-
-const SlideSection = function ({newestCourses}:props){
+const SlideSection = function ({newestCourses}:props) {
     return(
         <>
             <Container>
@@ -15,7 +15,9 @@ const SlideSection = function ({newestCourses}:props){
                     AULAS JÁ DISPONIVEIS
                 </p>
                 <SlideComponent courses={newestCourses} />
-                <button>Se cadastre agora</button>
+                <Link href='/register'>
+                    <button>Se cadastre agora</button>
+                </Link>
             </Container>
         </>
     )

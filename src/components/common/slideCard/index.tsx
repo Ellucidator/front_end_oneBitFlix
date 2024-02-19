@@ -1,5 +1,5 @@
+import { CourseType } from "@/types/courseTypes";
 import style from "./style.module.scss";
-import { CourseType } from '../../../services/courseService';
 
 
 interface props {

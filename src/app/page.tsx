@@ -4,15 +4,12 @@ import HeaderNoAuth from "@/components/homeNoAuth/headerNoAuth";
 import PresentationSection from "@/components/homeNoAuth/presentationSection";
 import CardSection from "@/components/homeNoAuth/cardSection";
 import SlideSection from "../components/homeNoAuth/slideSection/index";
+import { courseService } from "@/service/courseService";
 
-const getNewestCourses = async ()=>{
-  const res = await fetch("http://localhost:3000/courses/newest");
-  const data = res.json()
-  return data
-}
+
 const HomeNoAuth = async () =>{
-  const courses = await getNewestCourses()
 
+  const newestCourses = await courseService.getNewestCourses();
   
   return (
     <>
@@ -27,7 +24,7 @@ const HomeNoAuth = async () =>{
           <PresentationSection/>
         </div>
         <CardSection/>
-        <SlideSection newestCourses={courses}/>
+        <SlideSection newestCourses={newestCourses}/>
       </main>
     </>
   );

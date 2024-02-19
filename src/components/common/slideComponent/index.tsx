@@ -3,9 +3,9 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/css';
 import SlideCard from '../slideCard';
-import { CourseType } from '../../../services/courseService';
+import { CourseType } from '@/types/courseTypes';
 
-interface props {
+interface props{
     courses: CourseType[]
 }
 const SlideComponent = function({courses}:props){
