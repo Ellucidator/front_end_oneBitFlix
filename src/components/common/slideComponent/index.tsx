@@ -11,15 +11,16 @@ interface props{
 const SlideComponent = function({courses}:props){
     return(
         <>
-            <div>
+            <div className='d-flex flex-column aign-items-center py-4'>
                 <Splide options={{
                     type:"loop",
                     perPage:4,
                     perMove:1,
+                    height:350,
                     pagination:false,
                 }}>
                     {courses?.map((course)=>(
-                        <SplideSlide key={course.id}>
+                        <SplideSlide className='d-flex align-items-center justify-content-center' key={course.id}>
                             <SlideCard course={course}/>
                         </SplideSlide>
                     ))}
