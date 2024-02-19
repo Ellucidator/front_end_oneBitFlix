@@ -15,8 +15,10 @@ const SlideSection = function ({newestCourses}:props) {
                     AULAS JÁ DISPONIVEIS
                 </p>
                 <SlideComponent courses={newestCourses} />
-                <Link href='/register'>
-                    <button>Se cadastre agora</button>
+                <Link href='/register' className="d-flex justify-content-center pb-5">
+                    <button className={`${styles.slideSectionBtn} btn btn-outline-danger`} type="button">
+                        Se cadastre para acessar!
+                    </button>
                 </Link>
             </Container>
         </>

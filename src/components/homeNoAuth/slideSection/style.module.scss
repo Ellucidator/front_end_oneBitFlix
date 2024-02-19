@@ -1,1 +1,19 @@
 @import '../../../style/colors.module.scss';
+
+.sectionTitle{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.slideSectionBtn{
+    color: $lightGray;
+    font-weight: bold;
+    transition: 0.5s;
+    &:hover{
+        color: white;
+        background-color: $lightRed;
+        border-color: $darkRed;
+    }
+}
