@@ -9,7 +9,7 @@ const Register = function (){
                 <title>OneBitFlix</title>
             </Head>
             <main> 
-                <HeaderGeneric/>
+                <HeaderGeneric logoUrl="/" btnUrl="/login" btnContent="Quero fazer login"/>
             </main>
 
         </>
