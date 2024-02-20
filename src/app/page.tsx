@@ -6,12 +6,15 @@ import CardSection from "@/components/homeNoAuth/cardSection";
 import SlideSection from "../components/homeNoAuth/slideSection/index";
 import { courseService } from "@/service/courseService";
 import Footer from "@/components/common/footer";
+import { motion } from "framer-motion"
+
+
+
 
 
 const HomeNoAuth = async () =>{
 
   const newestCourses = await courseService.getNewestCourses();
-  
   return (
     <>
       <Head>
