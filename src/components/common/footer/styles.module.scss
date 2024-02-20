@@ -1,0 +1,34 @@
+@import '../../../style/colors.module.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 26px 0px;
+    gap: 16px;
+}
+
+.logoFooter {
+    width: 200px;
+}
+
+.linkFooter {
+    color: $mediumGray;
+    transition: 0.2s;
+    &:hover{
+        font-weight: bold;
+        color: $lightRed;
+    }
+}
+
+@media(max-width: 575px) {
+    .footer{
+        padding: 26px 16px;
+    }
+}
+@media(max-width: 394px) {
+    .footer{
+        justify-content: center;
+    }
+}

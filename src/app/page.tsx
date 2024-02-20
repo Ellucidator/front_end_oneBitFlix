@@ -5,6 +5,7 @@ import PresentationSection from "@/components/homeNoAuth/presentationSection";
 import CardSection from "@/components/homeNoAuth/cardSection";
 import SlideSection from "../components/homeNoAuth/slideSection/index";
 import { courseService } from "@/service/courseService";
+import Footer from "@/components/common/footer";
 
 
 const HomeNoAuth = async () =>{
@@ -25,6 +26,7 @@ const HomeNoAuth = async () =>{
         </div>
         <CardSection/>
         <SlideSection newestCourses={newestCourses}/>
+        <Footer/>
       </main>
     </>
   );
