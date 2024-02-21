@@ -4,9 +4,26 @@ import styles from './page.module.scss'
 import HeaderGeneric from "@/components/common/headerGenric"
 import Head from "next/head"
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap"
+import { FormEvent } from 'react'
+import { authService } from '@/service/authService'
+import { RegisterType } from '@/types/registerTypes'
 
 
 const Register = function (){
+    const handleRegister = async (event:FormEvent<HTMLFormElement>) =>{
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const user = {
+            firstName: formData.get('firstName')!.toString(),
+            lastName: formData.get('lastName')!.toString(),
+            phone: formData.get('phone')!.toString(),
+            birth: formData.get('birth')!.toString(),
+            email: formData.get('email')!.toString(),
+            password: formData.get('password')!.toString(),
+        }
+        // const newUser = await authService.register(user as RegisterType)
+        alert(user)
+    }
     return(
         <>
             <Head>
@@ -98,7 +115,7 @@ const Register = function (){
                             className={styles.input}
                             />
                         </FormGroup>
-                        <Button type = 'submit' outline className={styles.formBtn}>
+                        <Button onSubmit={()=>handleRegister} type = 'submit' outline className={styles.formBtn}>
                             CADASTRAR
                         </Button>
                     </Form>
