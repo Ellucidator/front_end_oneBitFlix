@@ -1,2 +1,57 @@
 @import '../../style/colors.module.scss';
 
+.main{
+    background-image: linear-gradient(to top, #8b8b8b1a, black),;
+}
+
+.formTitle{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.form{
+    width: 50%;
+    padding: 50px;
+    border: 5px solid $darkRed;
+    border-left: transparent;
+    border-right: transparent;
+    border-radius: 20px;
+    margin: 0px auto;
+}
+
+.label{
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.input{
+    border-color: $lightGray;
+    background-color: $darkGray;
+    color: white;
+
+    &::placeholder{
+        color: $lightGray ;
+    }
+
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.formBtn{
+    display: block;
+    margin: 50px auto 0px auto;
+    border-color: $lightRed;
+    color: $lightGray;
+    font-weight: bold;
+    transition: 0.2s;
+
+
+    &:hover{
+        background-color: $lightRed;
+        border-color: $darkRed;
+        transform: scale(1.03);
+    }
+}

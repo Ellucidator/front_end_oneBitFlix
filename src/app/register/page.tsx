@@ -3,7 +3,7 @@ import Footer from '@/components/common/footer'
 import styles from './page.module.scss'
 import HeaderGeneric from "@/components/common/headerGenric"
 import Head from "next/head"
-import { Container, Form, FormGroup, Input, Label } from "reactstrap"
+import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap"
 
 
 const Register = function (){
@@ -26,7 +26,7 @@ const Register = function (){
                             type='text' 
                             placeholder='Seu nome' 
                             required maxLength={20} 
-                            className={styles.inputName}
+                            className={styles.input}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -37,7 +37,7 @@ const Register = function (){
                             type='text' 
                             placeholder='Seu sobrenome' 
                             required
-                            className={styles.inputName}
+                            className={styles.input}
                             />
                         </FormGroup>
                         <FormGroup>
@@ -98,6 +98,9 @@ const Register = function (){
                             className={styles.input}
                             />
                         </FormGroup>
+                        <Button type = 'submit' outline className={styles.formBtn}>
+                            CADASTRAR
+                        </Button>
                     </Form>
                 </Container>
                 <Footer/>
