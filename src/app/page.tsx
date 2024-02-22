@@ -15,6 +15,8 @@ import { motion } from "framer-motion"
 const HomeNoAuth = async () =>{
 
   const newestCourses = await courseService.getNewestCourses();
+
+
   return (
     <>
       <Head>

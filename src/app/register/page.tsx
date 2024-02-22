@@ -5,14 +5,13 @@ import HeaderGeneric from "@/components/common/headerGenric"
 import Head from "next/head"
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap"
 import { FormEvent } from 'react'
+import { authService } from '@/service/authService'
 // import { authService } from '@/service/authService'
 // import { RegisterType } from '@/types/registerTypes'
 
 
 const Register = function () {
-    const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
+    const handleRegister = async (formData: FormData) => {
 
         const firstName = formData.get('firstName')!.toString()
         const lastName = formData.get('lastName')!.toString()
@@ -21,30 +20,15 @@ const Register = function () {
         const email = formData.get('email')!.toString()
         const password = formData.get('password')!.toString()
 
-        const getNewestCourses= async ()=>{
-            const response = await fetch("http://localhost:3000/auth/register",{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    firstName,
-                    lastName,
-                    phone,
-                    birth,
-                    email,
-                    password
-                }),
-                mode: "no-cors",
-            })
-            return response
-        }
-
-        const newUser = await getNewestCourses()
-
-        console.log(newUser)
+        await authService.register({
+            firstName,
+            lastName,
+            phone,
+            birth,
+            email,
+            password
+        })
     }
-
 
     return (
         <>
