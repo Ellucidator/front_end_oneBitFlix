@@ -30,16 +30,17 @@
 
 .input{
     border-color: $darkRed;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: $darkGray;
     color: white;
-
+    
     &::placeholder{
         color: $lightGray ;
     }
 
     &:focus{
-        box-shadow: none;
+        box-shadow: 0px 0px 0px 2px $lightRed;
+        
     }
 }
 
