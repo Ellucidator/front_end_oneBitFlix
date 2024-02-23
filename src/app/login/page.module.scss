@@ -1,2 +1,77 @@
 @import '../../style/colors.module.scss';
 
+
+.main{
+    background-image: linear-gradient(to top, #8b8b8b1a, black),;
+}
+
+.formTitle{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.form{
+    width: 60%;
+    padding: 50px;
+    border: 5px solid $darkRed;
+    background-color: rgba(0, 0, 0, 0.212);
+    border-left: transparent;
+    border-right: transparent;
+    border-radius: 20px;
+    margin: 100px auto 20px auto;
+    padding: 100px 0px;    
+}
+
+.formGroup{
+    width: 85%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.label{
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom: solid 2px $darkRed;
+}
+
+.input{
+    border-color: $darkRed;
+    border-radius: 20px;
+    background-color: $darkGray;
+    color: white;
+    
+    &::placeholder{
+        color: $lightGray ;
+    }
+
+    &:focus{
+        box-shadow: 0px 0px 0px 2px $lightRed;
+        
+    }
+}
+
+.formBtn{
+    display: block;
+    margin: 0px auto 0px auto;
+    border-color: $lightRed;
+    color: $lightGray;
+    font-weight: bold;
+    transition: 0.2s;
+
+
+    &:hover{
+        background-color: $lightRed;
+        border-color: $darkRed;
+        transform: scale(1.03);
+    }
+}
+
+@media(max-width: 992px) {
+    .form{
+        width: 90%;
+    }
+}
