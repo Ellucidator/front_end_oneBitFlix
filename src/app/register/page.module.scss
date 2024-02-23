@@ -18,16 +18,19 @@
     border-right: transparent;
     border-radius: 20px;
     margin: 0px auto;
+    
 }
 
 .label{
     font-size: 14px;
     font-weight: bold;
-    padding-top: 20px;
+    padding: 8px;
+    border-bottom: solid 2px $darkRed;
 }
 
 .input{
-    border-color: $lightGray;
+    border-color: $darkRed;
+    border-radius: 15px;
     background-color: $darkGray;
     color: white;
 
@@ -42,7 +45,7 @@
 
 .formBtn{
     display: block;
-    margin: 50px auto 0px auto;
+    margin: 0px auto 0px auto;
     border-color: $lightRed;
     color: $lightGray;
     font-weight: bold;
