@@ -1,10 +1,10 @@
 import Footer from '@/components/common/footer'
 import styles from './page.module.scss'
 import HeaderGeneric from "@/components/common/headerGenric"
-import Head from "next/head"
 import { Container} from "reactstrap"
 import { authService } from '@/service/authService'
 import { Metadata } from 'next'
+import Button from '@/components/common/botton'
 
 export const metadata:Metadata = {
     title: "One Bit Flix - Cadastro",
@@ -23,7 +23,6 @@ const Register = function () {
         console.log({firstName,lastName,phone,birth,email,password})
 
         await authService.register({firstName,lastName,phone,birth,email,password})
-
     }
 
     return (
@@ -115,9 +114,7 @@ const Register = function () {
                                 className={`form-control ${styles.input}`}
                             />
                         </div>
-                            <button type="submit" className={`btn btn-outline-secondary ${styles.formBtn}`}>
-                                Cadastrar
-                            </button>
+                            <Button btnHref='/login' />
                     </form>
                 </Container>
                 <Footer />

@@ -7,3 +7,8 @@ export interface CourseType {
     featured: boolean;
     categoryId: number;
 }
+
+export interface LoginType {
+    email: string;
+    password: string;
+}
