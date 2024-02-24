@@ -3,7 +3,7 @@ import styles from './page.module.scss'
 import { Metadata } from 'next'
 import { Container } from 'reactstrap'
 import Footer from '@/components/common/footer'
-import { authService } from '@/service/authService'
+import { authService, sessionService } from '@/service/authService'
 
 
 export const metadata:Metadata = {
@@ -12,7 +12,7 @@ export const metadata:Metadata = {
 }
 
 
-const Login = function () {
+const Login = async function () {
 
     const handleLogin =  async(formData: FormData) => {
         'use server'
@@ -20,6 +20,12 @@ const Login = function () {
         const password = formData.get('password')!.toString()
 
         const res= await authService.login({email, password})
+        console.log(res)
+        if(res.status === 200){
+            await sessionService.createSessionToken({
+                email
+            })
+        }
 
     }
 
