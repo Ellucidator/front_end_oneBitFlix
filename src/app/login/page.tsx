@@ -19,13 +19,13 @@ const Login = async function () {
         const email = formData.get('email')!.toString()
         const password = formData.get('password')!.toString()
 
-        const res= await authService.login({email, password})
-        console.log(res)
-        if(res.status === 200){
-            await sessionService.createSessionToken({
-                email
-            })
-        }
+        const res=  await authService.login({email, password})
+        // console.log(res)
+        // if(res.token){
+        //     await sessionService.createSessionToken({
+        //         email
+        //     })
+        // }
 
     }
 
