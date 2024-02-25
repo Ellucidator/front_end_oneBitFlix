@@ -5,7 +5,7 @@ const HeaderNoAuth = () => {
     return (
         <>
             <Container className={style.nav} >
-                <img src="/logoOnebitflix.svg" alt="logoOnebitflix" className={style.imgLogoNav}/>
+                <img src="common-image/logoOnebitflix.svg" alt="logoOnebitflix" className={style.imgLogoNav}/>
                 <div>
                     <Link href="/login">
                         <button type="button" className={`btn btn-outline-secondary ${style.navBtn}`}>

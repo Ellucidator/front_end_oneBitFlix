@@ -17,7 +17,7 @@ const PresentationSection= function (){
                         </p>
                         <Link href="/register">
                             <button type="button" className={`btn btn-outline-secondary ${styles.btnCta}`}>
-                                ACESSE AGORA <img src="/buttonPlay.svg" alt="buttonImg" className={styles.btnImg}/>
+                                ACESSE AGORA <img src="/common-image/buttonPlay.svg" alt="buttonImg" className={styles.btnImg}/>
                             </button>
                         </Link>
                     </Col>
