@@ -4,7 +4,6 @@ import HeaderGeneric from "@/components/common/headerGenric"
 import { Container} from "reactstrap"
 import { authService } from '@/service/authService'
 import { Metadata } from 'next'
-import Button from '@/components/common/botton'
 
 export const metadata:Metadata = {
     title: "One Bit Flix - Cadastro",
@@ -73,7 +72,7 @@ const Register = function () {
                                 name='email'
                                 type='email'
                                 placeholder='asWbA@example.com'
-                                required maxLength={20}
+                                required maxLength={40}
                                 className={`form-control ${styles.input}`}
                             />
                         </div>
@@ -114,7 +113,9 @@ const Register = function () {
                                 className={`form-control ${styles.input}`}
                             />
                         </div>
-                            <Button btnHref='/login' />
+                        <button type="submit" className={`btn btn-outline-secondary`}>
+                            CADASTRAR
+                        </button>
                     </form>
                 </Container>
                 <Footer />

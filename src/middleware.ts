@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sessionService } from "./service/authService";
 
 
 export const config = {
@@ -6,13 +7,13 @@ export const config = {
 }
 
 const publicRoutes = ['/','/login', '/register']
-export function middleware(req:NextRequest) {
+export async function middleware(req:NextRequest) {
 
     if(publicRoutes.includes(req.nextUrl.pathname)){
         return NextResponse.next()
     }
 
-    const session = null
+    const session = await sessionService.isSessionValid()
 
     if(!session){
         return NextResponse.redirect(new URL('/login',req.url))

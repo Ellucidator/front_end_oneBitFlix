@@ -2,6 +2,7 @@ import { RegisterType } from "@/types/authTypes"
 import { LoginType } from "@/types/courseTypes"
 import * as jose from 'jose'
 import { cookies } from "next/headers"
+import { redirect } from "next/navigation";
 
 
 
@@ -23,10 +24,31 @@ async function createSessionToken (token:string) {
         })
 }
 
+async function isSessionValid() {
+    const sessionCookie = cookies().get('session')
+
+    if(!sessionCookie){
+        return false
+    }
+
+    const {value} = sessionCookie
+    const {exp} = await openSessionToken(value)
+
+    const currentDate = new Date().getTime()
+
+    return ((exp as number) * 1000) > currentDate
+}
+
+export const sessionService = {
+    isSessionValid,
+    createSessionToken,
+    openSessionToken
+}
+
 export const authService = {
     register: async (user: RegisterType ) => {
         console.log(JSON.stringify(user))
-        await fetch("http://localhost:3000/auth/register",{
+        const res =await fetch("http://localhost:3000/auth/register",{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -34,6 +56,11 @@ export const authService = {
             body: JSON.stringify(user),
             cache: "force-cache",
         })
+        if(res.ok){
+            redirect('/login')
+        }else{
+            return false
+        }
     },
 
     login: async (user: LoginType ) => {
@@ -51,7 +78,7 @@ export const authService = {
 
         if(token){
             await createSessionToken(token)
-            return true
+            redirect('/homePage')
         }else{
             return false
         }
