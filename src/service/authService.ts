@@ -22,6 +22,7 @@ async function createSessionToken (token:string) {
             path:'/',
             httpOnly: true,
         })
+        
 }
 
 async function isSessionValid() {
@@ -64,7 +65,7 @@ export const authService = {
     },
 
     login: async (user: LoginType ) => {
-        const res = await fetch("http://localhost:3000/auth/login",{
+        const res:Response = await fetch("http://localhost:3000/auth/login",{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -74,8 +75,6 @@ export const authService = {
         })
 
         const {token} = await res.json()
-        console.log(token)
-
         if(token){
             await createSessionToken(token)
             redirect('/homePage')

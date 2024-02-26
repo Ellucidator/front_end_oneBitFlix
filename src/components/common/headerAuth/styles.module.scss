@@ -1,0 +1,24 @@
+@import '../../../style/colors.module.scss';
+
+.headerLogo {
+    width: 200px;
+    cursor: pointer;
+}
+
+.searchImage {
+    width: 20px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
